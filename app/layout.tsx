@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
+import Head from 'next/head'
 import { AuthProvider } from '../context/auth-context'
 import { CartProvider } from '../context/cart-context'
 import LayoutClient from './layout-client'
@@ -18,12 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
         />
-      </head>
+      </Head>
       <body className="antialiased">
         <AuthProvider>
           <CartProvider>
