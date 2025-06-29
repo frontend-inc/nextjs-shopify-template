@@ -29,11 +29,11 @@ export default function RootLayout({
         <AuthProvider>
           <CartProvider>
             <LayoutClient>
-              <Script src="/frontend.js" strategy="afterInteractive" />
               {children}
             </LayoutClient>
           </CartProvider>
         </AuthProvider>
+        <Script src="/frontend.js" strategy="afterInteractive" />
       </body>
     </html>
   )
