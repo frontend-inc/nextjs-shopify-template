@@ -21,7 +21,7 @@ export default function CollectionPage() {
       try {
         setLoading(true)
         
-        const { data, errors } = await client.request(QUERY_COLLECTION_BY_HANDLE, {
+        const response = await client.request(QUERY_COLLECTION_BY_HANDLE, {
           variables: {
             handle: handle,
             first: 24,
@@ -30,12 +30,14 @@ export default function CollectionPage() {
           },
         })
 
-        if (errors) {
-          console.error('GraphQL errors:', errors)
+        if ('errors' in response && response.errors) {
+          console.error('GraphQL errors:', response.errors)
           setError('Failed to fetch collection due to GraphQL errors')
           setLoading(false)
           return
         }
+
+        const data = response.data
 
         if (!data.collectionByHandle) {
           setError('Collection not found')
