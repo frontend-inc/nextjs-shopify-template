@@ -9,8 +9,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "../../lib/utils"
 
 // Enhance Sheet with AnimatePresence for proper exit animations
-const Sheet = React.forwardRef(({ children, ...props }) => (
-  <SheetPrimitive.Root {...props}>
+const Sheet = React.forwardRef(({ children, ...props }, ref) => (
+  <SheetPrimitive.Root {...props} ref={ref}>
     <AnimatePresence mode="wait">
       {props.open && children}
     </AnimatePresence>
