@@ -1,7 +1,6 @@
 'use client'
 
 import { useCart } from '../../context/cart-context'
-import { cn } from '../../lib/utils'
 import { Sheet, SheetContent } from '../ui/sheet'
 import CartHeader from './cart-header'
 import EmptyCart from './empty-cart'

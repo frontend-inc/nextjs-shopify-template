@@ -1,5 +1,5 @@
 // Utility function to format price
-export const formatPrice = (amount, currencyCode) => {
+export const formatPrice = (amount) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

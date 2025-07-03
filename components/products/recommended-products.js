@@ -5,7 +5,6 @@ import { client } from '../../shopify/client'
 import ProductCard from './product-card'
 import { QUERY_PRODUCT_RECOMMENDATIONS } from '../../graphql/products'
 import Spinner from '../../components/ui/Spinner'
-import { cn } from '../../lib/utils'
 import { BlurFade } from '../../components/magicui/blur-fade'
 
 export default function RecommendedProducts({ productId }) {
@@ -70,8 +69,6 @@ export default function RecommendedProducts({ productId }) {
     return null // Hide component if no recommendations
   }
 
-  // Import the ProductCarousel component using dynamic import
-  const ProductCarousel = require('../../components/product/product-carousel').default
 
   return (
     <div className={"mt-12"}>

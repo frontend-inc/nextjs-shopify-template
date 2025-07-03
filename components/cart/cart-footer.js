@@ -1,6 +1,5 @@
 import { formatPrice } from './price-formatter'
 import CheckoutButton from './checkout-button'
-import { cn } from '../../lib/utils'
 import { SheetClose } from '../ui/sheet'
 
 export default function CartFooter({ cart }) {

@@ -1,7 +1,6 @@
 export default function ProductInfo({ product }) {
   // Format price
   const price = product.priceRange?.minVariantPrice?.amount || '0'
-  const currencyCode = product.priceRange?.minVariantPrice?.currencyCode || 'USD'
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

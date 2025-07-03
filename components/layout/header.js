@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 import AuthModal from '../auth/auth-modal'
 import CartButton from '../cart/cart-button'
@@ -14,9 +15,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-8 xl:px-0">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <a href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-gray-900">
               Logo
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-2">

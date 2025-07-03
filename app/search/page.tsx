@@ -132,7 +132,7 @@ export default function ProductsPage() {
           <div>
             {debouncedSearchTerm && (
               <p className="mb-4 text-gray-500">
-                Showing {products.length} result{products.length !== 1 ? 's' : ''} for "{debouncedSearchTerm}"
+                Showing {products.length} result{products.length !== 1 ? 's' : ''} for &ldquo;{debouncedSearchTerm}&rdquo;
               </p>
             )}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

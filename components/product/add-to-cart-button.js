@@ -2,7 +2,6 @@
 
 import Spinner from '../../components/ui/Spinner'
 import { Button } from '../../components/ui/button'
-import { cn } from '../../lib/utils'
 
 export default function AddToCartButton({ selectedVariant, selectedSellingPlan, isLoading, addToCart }) {
   const handleAddToCart = () => {

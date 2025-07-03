@@ -1,5 +1,4 @@
 import ProductCard from './product-card'
-import { cn } from '../../lib/utils'
 import { BlurFade } from '../magicui/blur-fade'
 
 export default function ProductGrid({ products }) {

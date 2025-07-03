@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { Card, CardContent, CardFooter } from '../../components/ui/card'
-import { cn } from '../../lib/utils'
 
 export default function ProductCard({ product }) {
   const { title, handle, images, priceRange } = product
@@ -12,7 +11,6 @@ export default function ProductCard({ product }) {
   
   // Get the price from price range
   const price = priceRange?.minVariantPrice?.amount || '0'
-  const currencyCode = priceRange?.minVariantPrice?.currencyCode || 'USD'
   
   // Format price
   const formattedPrice = new Intl.NumberFormat('en-US', {

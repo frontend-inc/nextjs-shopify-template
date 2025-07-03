@@ -1,5 +1,4 @@
 import CartItem from './cart-item'
-import { cn } from '../../lib/utils'
 
 export default function CartItemList({ cart, updateCartItem, removeCartItem }) {
   return (

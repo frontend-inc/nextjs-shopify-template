@@ -1,4 +1,3 @@
-import { cn } from '../../lib/utils'
 import { SheetTitle } from '../ui/sheet'
 
 export default function CartHeader() {
