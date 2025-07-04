@@ -14,17 +14,13 @@ const eslintConfig = [
   {
     files: ["**/*.{js,jsx,ts,tsx,mjs}"],
     rules: {
-      // Override all rules to be warnings instead of errors
-      // This applies to all rules from the extended configs
     },
     linterOptions: {
-      // Report all problems as warnings
       reportUnusedDisableDirectives: "warn",
     },
   },
 ];
 
-// Post-process the config to convert all errors to warnings
 const processedConfig = eslintConfig.map(config => {
   if (config.rules) {
     const processedRules = {};
