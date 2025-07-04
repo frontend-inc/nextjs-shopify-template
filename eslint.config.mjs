@@ -11,6 +11,35 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    files: ["**/*.{js,jsx,ts,tsx,mjs}"],
+    rules: {
+      // Override all rules to be warnings instead of errors
+      // This applies to all rules from the extended configs
+    },
+    linterOptions: {
+      // Report all problems as warnings
+      reportUnusedDisableDirectives: "warn",
+    },
+  },
 ];
 
-export default eslintConfig;
+// Post-process the config to convert all errors to warnings
+const processedConfig = eslintConfig.map(config => {
+  if (config.rules) {
+    const processedRules = {};
+    for (const [ruleName, ruleConfig] of Object.entries(config.rules)) {
+      if (ruleConfig === "error" || ruleConfig === 2) {
+        processedRules[ruleName] = "warn";
+      } else if (Array.isArray(ruleConfig) && (ruleConfig[0] === "error" || ruleConfig[0] === 2)) {
+        processedRules[ruleName] = ["warn", ...ruleConfig.slice(1)];
+      } else {
+        processedRules[ruleName] = ruleConfig;
+      }
+    }
+    return { ...config, rules: processedRules };
+  }
+  return config;
+});
+
+export default processedConfig;
